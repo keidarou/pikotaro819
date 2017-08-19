@@ -23,10 +23,10 @@ public class share : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         // シェアテキスト設定
-        string text = "うんこくいたい切実";
         string url = "http://twitter.com/";
         yield return new WaitForSeconds(1);
-
+        GameObject timecount = GameObject.Find("timecounter");
+        string text = timecount.GetComponent<timelimitandmemory>().tweetTextGenerate();
         // キャプチャの保存先を指定
         string texture_url = Application.persistentDataPath + "/screenShot.png";
 
